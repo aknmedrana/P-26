@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
-import { getEducation } from "../services/dataService";
+import { getEducation } from "../../services/dataService";
 
 function EducationCard() {
   const [education, setEducation] = useState([]);
-  
+
   useEffect(() => {
     getEducation().then(setEducation);
   }, []);
