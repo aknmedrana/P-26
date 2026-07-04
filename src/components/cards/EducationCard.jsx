@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
 import { getEducation } from "@/services/dataService";
+const base = import.meta.env.BASE_URL;
 
 function EducationCard() {
   const [education, setEducation] = useState([]);
@@ -31,7 +32,7 @@ function EducationCard() {
                 {/* LOGO */}
                 {item.logo && (
                   <img
-                    src={item.logo}
+                    src={`${base}images/${item.logo}`}
                     alt={item.school}
                     style={{
                       width: "40px",

@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
-import {
-  getProfile,
-  getSocials,
-  downloadResume,
-} from "@/services/dataService";
+import { getProfile, getSocials, downloadResume } from "@/services/dataService";
 
 import {
   FaGithub,
@@ -16,6 +12,8 @@ import {
 function ProfileCard() {
   const [profile, setProfile] = useState(null);
   const [socials, setSocials] = useState(null);
+
+  const base = import.meta.env.BASE_URL;
 
   useEffect(() => {
     getProfile().then(setProfile);
@@ -30,7 +28,7 @@ function ProfileCard() {
     <Card className="profile-card p-2">
       <div className="profile text-center">
         <img
-          src={profile.avatar}
+          src={`${base}images/${profile.avatar}`}
           alt={profile.name}
           className="profile-image"
         />
@@ -48,7 +46,7 @@ function ProfileCard() {
           {profile.status}
         </span>
 
-        <div className="social-icons d-flex justify-content-center gap-1 ">
+        <div className="social-icons d-flex justify-content-center gap-1">
           <a href={socials.github} target="_blank" rel="noreferrer">
             <FaGithub size={16} />
           </a>
@@ -56,10 +54,6 @@ function ProfileCard() {
           <a href={socials.linkedin} target="_blank" rel="noreferrer">
             <FaLinkedin size={16} />
           </a>
-
-          {/* <a href={socials.facebook} target="_blank" rel="noreferrer">
-            <FaFacebook size={16} />
-          </a> */}
 
           <a href={`mailto:${socials.email}`}>
             <FaEnvelope size={16} />

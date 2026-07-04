@@ -3,6 +3,7 @@ import { getProfile } from "../../services/dataService";
 
 function Navbar({ onOpenModal }) {
   const [profile, setProfile] = useState(null);
+  const base = import.meta.env.BASE_URL;
 
   useEffect(() => {
     getProfile().then(setProfile);
@@ -25,7 +26,7 @@ function Navbar({ onOpenModal }) {
           href="#"
         >
           <img
-            src="/images/k-logo.png"
+            src={`${base}images/k-logo.png`}
             alt="Logo"
             width="36"
             height="36"
