@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
-import { getExperience } from "../../services/dataService";
+import { getExperience } from "@/services/dataService";
 
 const ExperienceCard = () => {
   const [experience, setExperience] = useState([]);

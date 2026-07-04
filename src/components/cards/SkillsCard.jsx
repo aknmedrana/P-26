@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
-import { getSkills } from "../../services/dataService";
+import { getSkills } from "@/services/dataService";
 
 const SkillsCard = () => {
   const [skills, setSkills] = useState([]);

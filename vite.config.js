@@ -4,4 +4,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/P-26/",
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
 });

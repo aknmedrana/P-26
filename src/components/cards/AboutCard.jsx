@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
-import { getProfile } from "../../services/dataService";
+import { getProfile } from "@/services/dataService";
 
 function AboutCard() {
   const [profile, setProfile] = useState(null);

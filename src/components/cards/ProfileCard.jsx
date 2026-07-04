@@ -4,7 +4,7 @@ import {
   getProfile,
   getSocials,
   downloadResume,
-} from "../../services/dataService";
+} from "@/services/dataService";
 
 import {
   FaGithub,

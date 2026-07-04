@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
-import { getProjects } from "../../services/dataService";
+import { getProjects } from "@/services/dataService";
 
 const ProjectsCard = () => {
   const [projects, setProjects] = useState([]);

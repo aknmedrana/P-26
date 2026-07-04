@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import { getSocials } from "../../services/dataService";
+import { getSocials } from "@/services/dataService";
 
 const ContactCard = () => {
   const [socials, setSocials] = useState(null);
