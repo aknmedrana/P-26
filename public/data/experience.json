@@ -1,0 +1,16 @@
+[
+  {
+    "company": "Nippon Micrometal Corporation PH",
+    "position": "Staff Intern",
+    "start": "March 2025",
+    "end": "June 2025",
+    "description": "Developed web applications using React and JavaScript, Windows applications using VB.NET."
+  },
+  {
+    "company": "Nippon Micrometal Corporation PH",
+    "position": "Staff - Software Developer",
+    "start": "June 2025",
+    "end": "PRESENT",
+    "description": "Built responsive web pages using React, Bootstrap, and REST APIs."
+  }
+]

@@ -1,0 +1,19 @@
+:root {
+  /* Brand */
+  --primary: #767f9e;
+  --secondary: #daa464;
+
+  /* UI */
+  --background: #ffffff;
+  --surface: #ffffff;
+  --border: #767f9e;
+
+  --text: #2b2b2b;
+  --text-light: #666666;
+
+  /* Effects */
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  --radius: 18px;
+  --transition: 0.25s ease;
+}

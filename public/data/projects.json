@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Website",
+    "description": "React portfolio + JSON file.",
+    "image": "/images/portfolio.png",
+    "github": "",
+    "demo": "",
+    "featured": true,
+    "technologies": ["React", "Bootstrap"]
+  },
+  {
+    "id": 1,
+    "title": "Student Portfolio",
+    "description": "HTML,CSS, JavaScript",
+    "image": "/images/portfolio.png",
+    "github": "https://github.com/aknmedrana/aknmedrana.github.io/blob/main/index.html",
+    "demo": "https://aknmedrana.github.io/",
+    "featured": false,
+    "technologies": ["JavaScript", "Bootstrap"]
+  }
+]

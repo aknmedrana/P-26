@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap");
+
+/* ==========================
+   ROOT
+========================== */
+
+:root {
+  --navbar-height: 80px;
+
+  --ink: #1c1e22;
+  --ink-soft: #5b6169;
+  --paper: #f3f1ec;
+  --card-bg: #ffffff;
+  --border: #e4e1d8;
+  --accent: #e8563d;
+  --accent-soft: rgba(232, 86, 61, 0.1);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius: 18px;
+  --shadow-rest: 0 1px 3px rgba(28, 30, 34, 0.05);
+  --shadow-hover: 0 20px 40px rgba(28, 30, 34, 0.14);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* ==========================
+   WRAPPER
+========================== */
+
+.dashboard-wrapper {
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+  background: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -6px -6px;
+}
+
+/* ==========================
+   GRID
+========================== */
+.dashboard-grid {
+  width: 100%;
+  height: 100%;
+  max-width: 1360px;
+
+  display: grid;
+  gap: 18px;
+  box-sizing: border-box;
+
+  grid-template-columns: 1.2fr 1.2fr 1fr 1.3fr 1.3fr;
+  grid-template-rows: 1.4fr 1fr 1.2fr;
+
+  grid-template-areas:
+    "profile    about      education   education  projects"
+    "profile    about      skills      skills     projects"
+    "profile    experience experience experience  contact";
+}
+
+.profile-area {
+  grid-area: profile;
+}
+.about-area {
+  grid-area: about;
+}
+.skills-area {
+  grid-area: skills;
+}
+.experience-area {
+  grid-area: experience;
+}
+.education-area {
+  grid-area: education;
+}
+.projects-area {
+  grid-area: projects;
+}
+.contact-area {
+  grid-area: contact;
+}
+
+.area {
+  min-width: 0;
+  min-height: 0;
+  cursor: pointer;
+}
+
+.area:focus {
+  outline: none;
+}
+
+.area:focus-visible .teaser-card {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ==========================
+   TEASER CARD (grid state)
+========================== */
+
+.teaser-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: var(--shadow-rest);
+  transition: transform 0.28s ease, box-shadow 0.28s ease,
+    border-color 0.28s ease;
+
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.area:hover .teaser-card {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.teaser-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.tag-index {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.tag-label {
+  text-transform: lowercase;
+}
+
+.teaser-body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.teaser-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 42px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    var(--card-bg)
+  );
+  pointer-events: none;
+}
+
+/* ==========================
+   TYPOGRAPHY INSIDE CARDS
+========================== */
+
+.teaser-body h2,
+.teaser-body h4,
+.modal-body h2,
+.modal-body h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  font-size: clamp(1rem, 4.5cqi, 1.35rem);
+  margin: 0 0 10px 0;
+}
+
+.teaser-body p,
+.teaser-body li,
+.modal-body p,
+.modal-body li {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.teaser-body hr,
+.modal-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 12px 0;
+}
+
+/* ==========================
+   PROFILE CARD 
+========================== */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-image {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 0.75rem auto;
+}
+.profile h2 {
+  font-size: 1.05rem;
+}
+
+.profile-title {
+  font-size: 0.8rem;
+}
+
+.profile-location {
+  font-size: 0.75rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.65rem;
+  margin: 0.35rem 0;
+}
+
+.social-icons {
+  gap: 0.6rem;
+  margin: 0.4rem 0;
+}
+
+.social-icons a {
+  font-size: 0.9rem;
+}
+
+.resume-btn,
+.profile .btn {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.75rem;
+}
+/* ==========================
+   ABOUT — STAT ROW
+========================== */
+
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 12px;
+}
+
+.about-stats > div {
+  text-align: center;
+  flex: 1;
+}
+
+.about-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 5cqi, 1.25rem);
+  color: var(--ink);
+}
+
+.about-stats span {
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+}
+
+/* ==========================
+   MODAL — full data on hover/click
+========================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 30, 34, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-panel {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  padding: 36px 40px;
+  width: min(560px, 90vw);
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: modalIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.modal-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.modal-eyebrow .tag-index {
+  color: var(--accent);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.modal-body h2,
+.modal-body h4 {
+  font-size: 1.5rem;
+}
+
+.modal-body .profile-image {
+  width: 140px;
+  height: 140px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ==========================
+   MOBILE — stacked, scrollable,
+   full content shown directly (no teaser/modal needed)
+========================== */
+
+@media (max-width: 900px) {
+  body {
+    overflow: auto;
+  }
+
+  .dashboard-wrapper {
+    height: auto;
+    align-items: flex-start;
+    padding: 20px 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      "profile"
+      "about"
+      "skills"
+      "experience"
+      "education"
+      "projects"
+      "contact";
+    height: auto;
+  }
+
+  .area {
+    cursor: default;
+  }
+
+  .teaser-card {
+    height: auto;
+  }
+
+  .teaser-body {
+    overflow: visible;
+  }
+
+  .teaser-fade {
+    display: none;
+  }
+}
