@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
+import { getEducation } from "../services/dataService";
 
 function EducationCard() {
   const [education, setEducation] = useState([]);
-
+  
   useEffect(() => {
-    fetch("/data/education.json")
-      .then((res) => res.json())
-      .then(setEducation);
+    getEducation().then(setEducation);
   }, []);
-
   return (
     <Card className="p-3 h-100">
       {/* HEADER */}

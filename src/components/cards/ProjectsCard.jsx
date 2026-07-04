@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import Card from "../common/Card";
+import { getProjects } from "../services/dataService";
 
 const ProjectsCard = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/data/projects.json")
-      .then((res) => res.json())
-      .then(setProjects);
+    getProjects().then(setProjects);
   }, []);
 
   return (
