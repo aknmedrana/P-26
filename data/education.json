@@ -1,14 +1,14 @@
 [
     {
       "school": "Polytechnic University of the Philippines - STO. TOMAS CAMPUS",
-      "logo": "/images/PUP.png",
+      "logo": "PUP.png",
       "course": "Bachelor of Science in Information Technology",
       "start": "SEPT 2021",
       "end": "OCT 2025"
     },
     {
       "school": "DMMC Institute of Health Sciences",
-      "logo": "/images/DMMC.png",
+      "logo": "DMMC.png",
       "course": "Science, Technology, Engineering and Mathematics",
       "start": "2019",
       "end": "2021"
