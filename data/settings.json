@@ -1,0 +1,10 @@
+{
+  "theme": {
+    "primary": "#767F9E",
+    "secondary": "#DAA464",
+    "background": "#FFFFFF",
+    "text": "#2C2C2C",
+    "border": "#767F9E"
+  },
+  "siteTitle": "John Doe Portfolio"
+}

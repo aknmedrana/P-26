@@ -1,0 +1,9 @@
+[
+    { "name": "HTML", "icon": "html" },
+    { "name": "CSS", "icon": "css" },
+    { "name": "JavaScript", "icon": "javascript" },
+    { "name": "React", "icon": "react" },
+    { "name": "Bootstrap", "icon": "bootstrap" },
+    { "name": "Node.js", "icon": "nodejs" },
+    { "name": "vb.NET", "icon": "vb.NET" }
+  ]
