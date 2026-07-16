@@ -23,7 +23,7 @@ const ContactCard = () => {
       </div>
 
       {/* CONTACT INFO */}
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="contact-content">
         <div>
           <small className="text-muted d-block">Email</small>
 

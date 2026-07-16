@@ -223,9 +223,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   text-align: center;
-  height: 100%;  
+  height: 100%;
 }
 
 .profile-image {
@@ -392,6 +392,19 @@ body {
   }
 }
 
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 576px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 /* ==========================
    MOBILE — stacked, scrollable,
    full content shown directly (no teaser/modal needed)
