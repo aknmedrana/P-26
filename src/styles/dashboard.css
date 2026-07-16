@@ -223,7 +223,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; 
   text-align: center;
+  height: 100%;  
 }
 
 .profile-image {
@@ -302,7 +304,7 @@ body {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(28, 30, 34, 0.45);
+  background: rgba(204, 221, 255, 0.199);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
